@@ -11,6 +11,7 @@ A responsive, single-page HTML invitation with a “two-page book” layout, cur
 - Clickable venue that opens Google Maps
 - Gift box opens a configurable registry link
 - Optional dress-code chat link (Telegram/WhatsApp/Discord)
+<img width="1234" height="889" alt="{3244555B-6E39-436A-AB34-CE02786273DB}" src="https://github.com/user-attachments/assets/3dd41589-e03e-4371-ba62-642328f008cc" />
 
 ## Quick start
 
@@ -39,7 +40,10 @@ Edit `js/config.js`:
 3. Open the published URL.
 
 ## Notes
+<img width="1265" height="771" alt="{C8B5C81B-1037-4A69-A713-3DF1C1FA32A9}" src="https://github.com/user-attachments/assets/3a117df6-b5a7-47c5-aae2-4137a5e6b290" />
 
 - All sample data is neutral/placeholders.
 - Images in `assets/` are placeholders and can be replaced with your artwork (keep the same filenames).
 - Google Fonts are loaded from `fonts.googleapis.com`.
+- <img width="940" height="765" alt="{9E718389-98CF-42EF-B2CF-0795E07E03D9}" src="https://github.com/user-attachments/assets/f9da665f-1141-408e-b8f7-3223b546ae22" />
+
