@@ -1,4 +1,4 @@
-# Circus Invitation — Interactive Demo
+# event-invitation-microsite
 
 A responsive, single-page HTML invitation with a “two-page book” layout, curtain transition, confetti, a ticket “scanner” modal, and configurable links.
 
