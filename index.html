@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" class="nojs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b10" />
+  <title>Circus Invitation — Interactive Demo</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <canvas id="fxCanvas"></canvas>
+
+  <!-- Fullscreen clown entrance -->
+  <div class="clownOverlay" id="clownOverlay" aria-hidden="true">
+    <div class="inner">
+      <img src="assets/clown.png" alt="">
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="dot"></div>
+        <div>CIRCUS INVITATION — DEMO</div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="btnBoom" type="button">Confetti</button>
+        <button class="btn primary" id="btnShare" type="button">Copy link</button>
+      </div>
+    </div>
+
+    <div class="book" id="book">
+      <div class="spine"></div>
+
+      <!-- curtain transition overlay -->
+      <div class="transitionCurtains" aria-hidden="true">
+        <div class="tcurtain left"></div>
+        <div class="tcurtain right"></div>
+        <div class="tvalance"></div>
+      </div>
+
+      <div class="pages">
+        <!-- LEFT PAGE -->
+        <section class="page pageLeft active" id="pageLeft">
+          <div class="stageBg"></div>
+          <div class="curtain left"></div>
+          <div class="curtain right"></div>
+          <div class="valance"></div>
+          <div class="frame"></div>
+          <div class="bulbs"></div>
+
+          <div class="pageScroll">
+            <div class="plaque plaqueImg" id="enterPlaque" role="button" tabindex="0" title="Tap to enter">
+              <img class="plaqueBg" src="assets/enter.png" alt="">
+              <div class="plaqueText">
+                <div class="plaqueH">TAP<br>TO ENTER<br>THE SHOW</div>
+                <div class="plaqueSub">Open the invitation</div>
+              </div>
+            </div>
+
+            <div class="productRail" id="productRail" aria-label="Showcase">
+  <div class="productCard" id="productCard">
+    <img id="productImg" src="assets/product-1.png" alt="">
+  </div>
+</div>
+
+            <div class="stub" id="stubTicket" title="Tap to scan">
+              <img class="stubBgImg" src="assets/stub.png" alt="">
+              <div class="stubContent">
+                <div class="stubTop">
+                  <div class="stubTitle">Ticket<br>to the show</div>
+                </div>
+                <div class="stubBottom">
+                  <div class="hint">TAP — SCAN</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- RIGHT PAGE -->
+        <section class="page pageRight" id="pageRight">
+          <div class="stageBg"></div>
+
+          <div class="valance"></div>
+          <div class="frame"></div>
+          <div class="bulbs"></div>
+
+          <div class="pageScroll">
+            <div class="headlineWrap">
+  <img class="headlineImg" src="assets/headline-under.png" alt="">
+  <div class="headline" id="headline">THE SHOW<br>STARTS<br>NOW!</div>
+</div>
+
+            <div class="heroRow">
+              <div class="clownHero" id="clownHero" title="Tap the clown">
+                <img class="clownImg" src="assets/clown.png" alt="Clown">
+              </div>
+<div class="giftImgWrap" id="giftBox" role="button" tabindex="0" aria-label="Open WishPicks" title="Open WishPicks">
+  <img class="giftImg" src="assets/gift.png" alt="Gift">
+</div>
+              <div class="bigTicket" id="bigTicket" title="Tap — fullscreen scan">
+                <div class="tearLine" aria-hidden="true"></div>
+                <div class="usedStamp" aria-hidden="true">USED</div>
+
+                <div class="ticketHeader">
+                  <div>
+                    <div class="welcome">WELCOME TO</div>
+                    <div class="bigTitle">THE EVENT</div>
+                  </div>
+                  <div class="ticketChip">INVITATION</div>
+                </div>
+
+                <div class="ticketGrid">
+                  <div class="field"><b>Date:</b> <span id="fDate">TBA</span></div>
+                  <div class="field"><b>Time:</b> <span id="fTime">TBA</span></div>
+
+                  <!-- Clickable venue: opens maps -->
+                  <div class="field clickable" id="placeField" role="button" tabindex="0" style="grid-column:1 / -1;">
+                    <b>Venue:</b>
+                    <span id="fPlace" class="placeText">123 Example Street</span>
+                    <span class="placeHint">tap → open in Google Maps</span>
+                  </div>
+
+                  <div class="field dress" id="dressField">
+                    <div class="tag">Dress code:</div>
+                    <div class="mode" id="dressMode" title="Tap: switch option + open chat">CIRCUS GLAMOUR • SPARKLE • DRAMA</div>
+                  </div>
+
+                  <div class="field" style="grid-column:1 / -1;"><b>RSVP:</b> <span id="fRSVP">Event Host</span></div>
+                </div>
+
+                <div class="barcodeRow">
+                  <div class="barcode" aria-hidden="true"></div>
+                  <div class="barcodeText">ADMIT • 001-482-91</div>
+                </div>
+
+                <div class="ticketHint">
+                  <div class="mini">Tap the ticket → fullscreen scan</div>
+                  <div class="cta">Scan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navMobile">
+            <button class="btn" id="btnBack" type="button">← Cover</button>
+            <button class="btn primary" id="btnScan" type="button">Scan ticket</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scanner Modal -->
+  <div class="modal" id="scanModal" aria-hidden="true">
+    <div class="modalCard">
+      <div class="modalHeader">
+        <div class="ttl">Ticket scanner</div>
+        <button class="x" id="scanClose" type="button">Close</button>
+      </div>
+      <div class="scanBody">
+        <div class="scanStage" id="scanStage">
+          <div class="scanLine"></div>
+
+          <div class="scanTicket" id="scanTicket">
+            <!-- cloned ticket will be injected here -->
+          </div>
+
+          <div class="scanStatus" id="scanStatus">
+            Scanning…
+            <small>bring the ticket closer (just kidding)</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telegram Dresscode Modal -->
+  <div class="modal" id="tgModal" aria-hidden="true">
+    <div class="modalCard">
+      <div class="modalHeader">
+        <div class="ttl">Dress code chat</div>
+        <button class="x" id="tgClose" type="button">Close</button>
+      </div>
+      <div class="tgBody">
+        <div class="tgTitle">Open the chat link?</div>
+        <div class="tgDesc">Use this chat to discuss dress code ideas and event details.</div>
+        <div class="tgModeRow">
+          <span>Current option:</span>
+          <b id="tgCurrentMode"></b>
+        </div>
+        <div class="tgBtns">
+          <button class="btn primary" id="tgOpen" type="button">Open link</button>
+          <button class="btn" id="tgCopy" type="button">Copy link</button>
+        </div>
+        <div class="tgSmall">If the app doesn't open, use “Copy link” and paste it manually.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
